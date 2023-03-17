@@ -9,13 +9,13 @@ class ToysController < ApplicationController
   end
 
   def create
-    toy = Toy.create(toy_params)
+    toy = Toy.create!(toy_params)
     render json: toy, status: :created
   end
 
   def update
     toy = find_toy
-    toy.update(toy_params)
+    toy.update!(toy_params)
     render json: toy
   end
 
